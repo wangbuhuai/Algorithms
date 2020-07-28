@@ -1,0 +1,114 @@
+<!-- Created by Dayu Wang (dwang@stchas.edu) on 2020-07-28. -->
+
+<!-- Last updated by Dayu Wang (dwang@stchas.edu) on 2020-07-28. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        const DOCUMENT_TITLE = 'LeetCode 1529';
+        const FAVICON_URL = "https://drive.google.com/uc?export=download&id=1y71NxJX3b9-Qbka_gTYlXoZIA-9CyU9T";
+        const NUMBERED_QUESTIONS = false;
+        const OUTPUT_ELEMENT = null;
+        const AUTHORS = [
+            {
+                "NAME" : "Dayu Wang",
+                "EMAIL" : "dwang@stchas.edu"
+            }
+        ]; const COLORS = {
+            "ANSWER" : "darkcyan",
+            "BACKGROUND" : "white",
+            "HIGHLIGHT" : "#ffff99",
+            "MAIN" : "black",
+            "THEME" : "orangered",
+            "KEYWORD" : "blue",
+            "KW" : "blue",
+            "CODE_HIGHLIGHT" : "gainsboro",
+            "NEGATION" : "red",
+            "GUIDELINE" : "navy",
+            "SIGNATURE" : "deeppink"
+        }; const DOCUMENT = {
+            "JUSTIFY" : true,
+            "SPACING" : 12  // In 'pt'
+        }; const FONTS = {
+            "TEXT" : "verdana",
+            "CODE" : "consolas,monaco,monospace"
+        }; const SIZES = {
+            "TEXT" : {
+                "LARGE" : 12,  // In 'pt'
+                "REGULAR" : 11,  // In 'pt'
+                "SMALL" : 10  // In 'pt'
+            },
+            "CODE" : {
+                "REGULAR" : 12.5,  // In 'pt'
+                "SMALL" : 11.5  // In 'pt'
+            }
+        }; const WINDOW = {
+            "WIDTH" : 600  // In 'pt'
+        }
+    </script>
+    <script src="https://drive.google.com/uc?export=download&id=1G6gs10Dt_Y4fYCBeh_cXmH2LrR4awGIY" type="text/javascript"></script>
+    <title></title>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <p>Solutions to Algorithm Questions</p>
+    <p>LeetCode 1529 - Bulb Switcher (IV)</p>
+    <div class="author">Solution Prepared by</div>
+</div>
+
+<!-- Question -->
+<div class="question">
+    <p>LeetCode 1529 - Bulb Switcher (IV)</p><hr>
+    <p>There is a room with <span class="math bold">n</span> bulbs (numbered from <span class="math bold 2">0</span> to <span class="math bold 2">n-1</span>) arranged in a row from left to right.&nbsp; Initially, all the bulbs are <span class="bold">turned off</span>.</p>
+    <p>Your task is to obtain the <span class="hl">configuration represented by <span class="code theme">target</span></span> where <span class="code theme">target</span><span class="code main">[</span><span class="code theme">i</span><span class="code main">]</span> is <span class="code main bold">'1'</span> if the <span class="code theme">i</span>-th bulb is turned on and is <span class="code main bold">'0'</span> if it is turned off.</p>
+    <p>You have a switch to flip the state of the bulb, a flip operation is defined as follows:</p>
+<div class="list">
+    <p>Choose any bulb (index <span class="code theme">i</span>) of your current configuration.
+    <p>Flip each bulb from index <span class="code theme">i</span> to <span class="code theme">n &minus; 1</span>.</p>
+    <p>When any bulb is flipped it means that if it is <span class="math bold 2">0</span> it changes to <span class="math bold 2">1</span> and if it is <span class="math bold 2">1</span> it changes to <span class="math bold 2">0</span>.</p>
+</div>
+    <p>Return the <span class="hl">minimum number of flips</span> required to form <span class="code theme">target</span>.</p>
+    <div class="ex 1 175">
+        <p class="Argument"><span class="code theme small">target</span><span class="code main small">: "10111"</span></p>
+        <p class="Expected Return Value">3</p>
+        <p class="Explanation">Initial configuration: <span class="code main small">"00000"</span>.<br>Flip from the first bulb: <span class="code main small">"00000"</span> &#10132; <span class="code main small">"11111"</span><br>Flip from the second bulb: <span class="code main small">"11111"</span> &#10132; <span class="code main small">"10000"</span><br>Flip from the third bulb: <span class="code main small">"10000"</span> &#10132; <span class="code main small">"10111"</span><br>We need <span class="hl">at least 3 flip operations</span> to form <span class="code theme small">target</span>.</p>
+    </div>
+    <div class="ex 2 175">
+        <p class="Argument"><span class="code theme small">target</span><span class="code main small">: "101"</span></p>
+        <p class="Expected Return Value">3</p>
+        <p class="Explanation"><span class="code main small">"000"</span> &#10132; <span class="code main small">"111"</span> &#10132; <span class="code main small">"100"</span> &#10132; <span class="code main small">"101"</span></p>
+    </div>
+    <div class="ex 3 175">
+        <p class="Argument"><span class="code theme small">target</span><span class="code main small">: "001011101"</span></p>
+        <p class="Expected Return Value">5</p>
+        <p class="Explanation"><span class="code main small">"000000000"</span> &#10132; <span class="code main small">"001111111"</span> &#10132; <span class="code main small">"001000000"</span> &#10132; <span class="code main small">"001011111"</span> &#10132; <span class="code main small">"001011100"</span> &#10132; <span class="code main small">"001011101"</span></p>
+    </div>
+</div>
+
+<!-- Solution -->
+<div class="answer">
+    <p>Dayu Wang's Solution</p><hr>
+    <div class="code">
+        <p style="line-height: normal; text-autospace: none;"><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">class</span></strong><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> Solution {</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">public</span></strong> <strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">int</span></strong><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> minFlips(String </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">target</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">) {</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">int</span></strong> <span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">count</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> = 0, </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">swtch</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> = 0;</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">for</span></strong><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> (</span><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">int</span></strong> <span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">i</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> = 0; </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">i</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> &lt; </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">target</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">.length(); </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">i</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">++) {</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">if</span></strong><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> (</span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">target</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">.charAt(</span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">i</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">) - </span><span style="font-size: 16.0pt; font-family: Consolas; color: #2a00ff;">'0'</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> != </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">swtch</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">) {</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">count</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">++;</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">swtch</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;"> = 1 - </span><span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">swtch</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">;</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 16.0pt; font-family: Consolas; color: #7f0055;">return</span></strong> <span style="font-size: 16.0pt; font-family: Consolas; color: #6a3e3e;">count</span><span style="font-size: 16.0pt; font-family: Consolas; color: black;">;</span></p>
+        <p style="line-height: normal; text-autospace: none;"><span style="font-size: 16.0pt; font-family: Consolas; color: black;">&nbsp;&nbsp;&nbsp; }</span></p>
+        <p><span style="font-size: 16.0pt; line-height: 125%; font-family: Consolas; color: black;">}</span></p>
+    </div>
+    <p>Time complexity: <span class="math blue bold">O(n)</span></p>
+    <p>Space complexity: <span class="math blue bold">O(1)</span></p>
+</div>
+</body>
+</html>
